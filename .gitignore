@@ -5,7 +5,12 @@
 *.log
 
 # BlueJ files
+#Doc Ordner
+**/doc
+*.pkh
 *.ctxt
+*.bluej
+.DS_Store
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
