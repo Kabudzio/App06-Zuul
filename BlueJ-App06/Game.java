@@ -21,7 +21,7 @@ public class Game
 {
     private Parser parser;
     private Room currentRoom;
-        
+    private Player player;
     /**
      * Create the game and initialise its internal map.
      */
@@ -29,6 +29,7 @@ public class Game
     {
         createRooms();
         parser = new Parser();
+        player = new Player();       
     }
 
     /**
@@ -36,32 +37,49 @@ public class Game
      */
     private void createRooms()
     {
-        Room outside, theater, pub, lab, office;
-      
+        Room outside, Bank, Toilets, Staff, garage, corridor , Security, Safe;
+        energyDrink drink = new energyDrink("You see an energy drink", player);
+        Money cash = new Money("You see money", player);
+        Items Key = new Items("There is a key!");
+        
         // create the rooms
-        outside = new Room("outside the main entrance of the university");
-        theater = new Room("in a lecture theater");
-        pub = new Room("in the campus pub");
-        lab = new Room("in a computing lab");
-        office = new Room("in the computing admin office");
+        outside = new Room("outside the main entrance of the bank", drink);
+        Bank = new Room("Inside the bank", cash);
+        Toilets = new Room("in the toilets", drink);
+        Staff= new Room("in a staff room", drink);
+        garage = new Room("in the garage");
+        corridor = new Room("in a corridor");
+        Security = new Room("in the Security", Key);
+        Safe = new Room("in the Safe room", cash);
         
         // initialise room exits
-        outside.setExit("east", theater);
-        outside.setExit("south", lab);
-        outside.setExit("west", pub);
+        outside.setExit("east", Bank);
+        outside.setExit("south", garage);
 
-        theater.setExit("west", outside);
+        Bank.setExit("west", outside);
+        Bank.setExit("south", Staff);
 
-        pub.setExit("east", outside);
+        Staff.setExit("west", garage);
+        Staff.setExit("east", corridor);
+        Staff.setExit("north", Bank);
+        
+        garage.setExit("north", outside);
+        garage.setExit("east", Staff);
 
-        lab.setExit("north", outside);
-        lab.setExit("east", office);
+        corridor.setExit("south", Toilets);
+        corridor.setExit("east", Security);
+        corridor.setExit("west", Staff);
+        
+        Toilets.setExit("north", corridor);
 
-        office.setExit("west", lab);
-
+        Security.setExit("east", Safe);
+        Security.setExit("west", corridor);
+        
+        Safe.setExit("west", Security);
+        
         currentRoom = outside;  // start game outside
     }
-
+    
     /**
      *  Main play routine.  Loops until end of play.
      */
@@ -124,10 +142,31 @@ public class Game
             case QUIT:
                 wantToQuit = quit(command);
                 break;
+              
+            case Take:
+                wantToQuit = quit(command);
+                break;
+                
+            case Use:
+                wantToQuit = quit(command);
+                break;
+                
+            case Equipment:
+                wantToQuit = quit(command);
+                break;
+                
+            case player:
+                showPlayer();
+                break;
         }
         return wantToQuit;
     }
 
+    public void showPlayer()
+    {
+        System.out.println("Energy:"+ player.getEnergy());
+        System.out.println("Score:" + player.getScore());
+    }
     // implementations of user commands:
 
     /**
