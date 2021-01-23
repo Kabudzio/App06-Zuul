@@ -10,11 +10,19 @@ public class Player
     // instance variables - replace the example below with your own
     private int energy;
     private int score;
-    private ArrayList<Items> Equipment = new ArrayList<Items>();
+    private ArrayList<Items> Equipment = new ArrayList<>();
     
     public void addEquipment(Items Eq)
     {
-     Equipment.add(Eq);
+        Equipment.add(Eq);
+    }
+    
+    public void showEquipment()
+    {
+     for(int i = 0;i < Equipment.size();i++)
+     {
+      System.out.println(Equipment.get(i).getName());   
+     }
     }
     
     public int getEnergy()

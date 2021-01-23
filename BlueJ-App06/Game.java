@@ -41,6 +41,7 @@ public class Game
         energyDrink drink = new energyDrink("You see an energy drink", player);
         Money cash = new Money("You see money", player);
         Items Key = new Items("There is a key!");
+        player.addEquipment(Key);
         
         // create the rooms
         outside = new Room("outside the main entrance of the bank", drink);
@@ -152,7 +153,7 @@ public class Game
                 break;
                 
             case Equipment:
-                wantToQuit = quit(command);
+                 player.showEquipment();
                 break;
                 
             case player:

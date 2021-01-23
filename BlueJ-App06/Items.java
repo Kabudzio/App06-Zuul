@@ -24,6 +24,11 @@
     
     }
     
+    public String getName()
+    {
+        return name;
+    }
+    
     /**
      * Constructor for objects of class Items
      */
