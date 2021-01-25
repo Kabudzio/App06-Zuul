@@ -38,9 +38,9 @@ public class Game
     private void createRooms()
     {
         Room outside, Bank, Toilets, Staff, garage, corridor , Security, Safe;
-        energyDrink drink = new energyDrink("You see an energy drink", player);
-        Money cash = new Money("You see money", player);
-        Items Key = new Items("There is a key!");
+        energyDrink drink = new energyDrink("You see an energy drink","Drink", player);
+        Money cash = new Money("You see money","Money", player);
+        Items Key = new Items("There is a key!","Key");
         player.addEquipment(Key);
         
         // create the rooms

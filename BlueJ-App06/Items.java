@@ -13,10 +13,11 @@
         /**
          * Constructor for objects of class Items
          */
-        public Items(String description)
+        public Items(String description, String name)
     {
             // initialise instance variables
             this.description = description;
+            this.name = name;
     }
     
     public void useItem()

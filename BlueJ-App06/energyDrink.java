@@ -14,9 +14,9 @@ public class energyDrink extends Items
     energy.increaseEnergy();
  }
   
- public energyDrink(String description, Player energy)
+ public energyDrink(String description, String name, Player energy)
  {
-     super(description);
+     super(description, name);
      this.energy = energy;
  }
  

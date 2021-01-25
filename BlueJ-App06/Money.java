@@ -15,9 +15,9 @@ public class Money extends Items
      score.increaseScore();
     }
   
-    public Money(String description, Player score)
+    public Money(String description,String name, Player score)
     {
-     super(description);
+     super(description, name);
      this.score = score;
     }
 }
