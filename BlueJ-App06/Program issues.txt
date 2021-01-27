@@ -1,0 +1,10 @@
+1 The code is not very reusable making it longer than it should be.
+2 Items can be used infinite amount of times.
+3 Items can be picked up infinite amount of times as well.
+4 Items couldn't be picked up altough declared correctly in BlueJ.
+5 Program accepts only one version of a command and will treat upper case as a different word.
+6 Energy could rise infinitly.
+7 Energy doesn't drop when going between rooms. fixed
+8 Game didn't detect key in the code. fixed
+9 Null pointer exceptions were diffictult to identify.
+10 The code was hard to orginise.

@@ -1,0 +1,5 @@
+1 The game can be extended by adding more rooms to it.
+2 The game could have more items to be picked up that would have different effects.
+3 Game could use riddels to extend the play time and make it more fun and difficult to progress
+4 The game could be constructed of a larger amount of levels contaning different sets of rooms.
+5 The game could use a better interface that would communicate more information to the player.
